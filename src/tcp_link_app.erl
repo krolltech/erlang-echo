@@ -5,6 +5,7 @@
 	 start/2,
 	 start/0,
 	 stop/1,
+	 stop/0,
 	 init/1
 	]).
 
@@ -27,6 +28,10 @@ start(_Type, _StartArgs) ->
 
 stop(_State) ->
     ok.
+
+stop()->
+    error_logger:info_report("tcp link application stop~n"),
+    application:stop(tcp_link).
 
 init([Port,Module]) ->
     error_logger:info_report("tcp application init on ~p.",[Port]),

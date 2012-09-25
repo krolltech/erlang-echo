@@ -22,8 +22,7 @@ erl:
 	erl -pa ebin
 
 run: compile
-	erl $(OPTS)  -name $(NODE) -s tcp_link_app  start
-
+	erl $(OPTS)  -name $(NODE) -s tcp_link_app
 stop:
 	erl $(OPTS)  -name $(NODE) -s tcp_link_app  stop
 
