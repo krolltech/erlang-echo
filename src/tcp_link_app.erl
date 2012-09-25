@@ -3,6 +3,7 @@
 -export([
 	 start_server/1,
 	 start/2,
+	 start/0,
 	 stop/1,
 	 init/1
 	]).
@@ -10,6 +11,9 @@
 -define(MAX_RESTART,5).
 -define(MAX_TIME,60).
 -define(LISTEN_PORT,8081).
+
+start()->
+    application:start(tcp_link).
 
 start_server(Port) ->
     supervisor:start_child(tcp_server_sup,[Port]).

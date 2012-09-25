@@ -2,6 +2,7 @@
 {application, tcp_link,
  [{description, "a tcp model."},
   {vsn, "0.1.0"},
+  {id,"tcp_link"},
   {modules, [
 	     tcp_acceptor
 	    ]},

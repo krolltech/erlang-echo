@@ -1,9 +1,13 @@
 一个erlang语言的echo服务器，从 https://github.com/tolbrino/hotwheels.git 项目移植出来.
 
-server==
+server== 开始
 * step 1 : make
 * step 2 : make run
-* step 3 : application:start(tcp_link).
+
+
+server== 停止
+* step 1 : make
+* step 2 : make stop
 
 
 client==
