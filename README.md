@@ -1,6 +1,9 @@
 一个erlang语言的echo服务器，从 https://github.com/tolbrino/hotwheels.git 项目移植出来.
 经典的tcp模型。可以不断的丰富加入自己的项目代码。
 
+若需要增大tcp连接数，你需要手动修改自己的操作系统限制.
+测试8000个连接同时处理轻松实现。
+
 server== 开始
 * step 1 : make %%编译
 * step 2 : make erl  %%进入erl终端.
