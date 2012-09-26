@@ -14,15 +14,13 @@ OPTS = \
 		$(NULL)
 
 compile:
-	erl -make #-smp disable
+	erl -make
 
-boot: compile
-	erl $(OPTS) -s tcp_link_admin make_boot -s init stop
 erl:
 	erl -pa ebin +K true
 
 run: compile
-	erl $(OPTS)  -name $(NODE) -s tcp_link_app
+	erl $(OPTS)  -name $(NODE) -s tcp_link_app start
 stop:
 	erl $(OPTS)  -name $(NODE) -s tcp_link_app  stop
 
