@@ -1,4 +1,5 @@
 一个erlang语言的echo服务器，从 https://github.com/tolbrino/hotwheels.git 项目移植出来.
+经典的tcp模型。可以不断的丰富加入自己的项目代码。
 
 server== 开始
 * step 1 : make %%编译
