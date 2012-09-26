@@ -1,0 +1,9 @@
+Gemfile.lock
+tags
+.*
+*~
+*#
+ebin/*.beam
+!.gitignore
+!.gitkeep
+vendor/cache/*.gem
