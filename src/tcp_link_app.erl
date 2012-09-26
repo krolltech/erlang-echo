@@ -39,13 +39,12 @@ init([Port,Module]) ->
       {_SupFlags = {one_for_one, ?MAX_RESTART , ?MAX_TIME } ,
        [
 	{tcp_sup,
-	 {tcp_acceptor, start_link, [self(), Port ,tcp_server] },
+	 { tcp_acceptor, start_link, [self() , Port , tcp_server]  },
 	 permanent,
 	 2000,
 	 worker,
 	 [tcp_acceptor]
 	}
-
 	,
 	{tcp_server_sup,
 	 { supervisor, start_link, [{local,tcp_server_sup}, ?MODULE ,[Module] ] },

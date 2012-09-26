@@ -6,10 +6,10 @@
        ).
 
 start(Socket) ->
-    send("Ok",#state{socket=Socket }).
+    send("",#state{socket=Socket }).
 
 process(Data, State ) ->
-    error_logger:info_report("process."),
+    error_logger:info_report("process.~p~n",self()),
     send(Data,State).
 
 send(Data,State ) ->

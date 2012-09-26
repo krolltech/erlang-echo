@@ -56,9 +56,7 @@ handle_info({tcp , Socket ,Bin} ,State)
     dispatch(Bin,echo,State).
 
 dispatch(Data, Mod ,State = #state{ transport = Mod } ) ->
-    error_logger:info_report("dispach"),
     { ok , Keep , _NewState } = Mod:process( Data,State#state.state ),
-    io:format("state ~p~n",[State]),
     keep_alive_or_close( Keep , State).
 
 keep_alive_or_close(Keep , State) ->
