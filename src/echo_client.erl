@@ -13,7 +13,7 @@ start(IP,Port) ->
     talk(Socket).
 
 talk(Socket) ->
-    receive after 1000 -> 1000 end,
+    receive after 1000 -> ok end,
     ok=gen_tcp:send(Socket,"good"),
     recv(Socket),
     talk(Socket).

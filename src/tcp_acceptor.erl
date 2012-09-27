@@ -76,15 +76,18 @@ handle_error(timeout) ->
     ok;
 handle_error({enfile, _}) ->
     %% Out of sockets...
+    error_logger:info_report("out of sockets~n"),
     sleep(200);
 
 handle_error(emfile) ->
     %% Too many open files -> Out of sockets...
+    error_logger:info_report("tow many sockets..~n"),
     sleep(200);
+
 handle_error(closed) ->
     error_logger:info_report("The accept socket was closed by "
 			     "a third party. "
-			     "This will not have an impact on janus "
+			     "This will not have an impact on tcp_link "
 			     "that will open a new accept socket and "
 			     "go on as nothing happened. It does however "
 			     "indicate that some other software is behaving "
@@ -105,6 +108,7 @@ handle_error(econnaborted) ->
 handle_error({'EXIT', Reason}) ->
     String = lists:flatten(io_lib:format("Accept exit: ~p", [Reason])),
     accept_failed(String);
+
 handle_error(Reason) ->
     String = lists:flatten(io_lib:format("Accept error: ~p", [Reason])),
     accept_failed(String).
