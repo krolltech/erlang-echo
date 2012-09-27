@@ -20,10 +20,10 @@ erl:
 	erl -pa ebin +K true
 
 run: compile
-	erl $(OPTS)  -name $(NODE) -s tcp_link_app start -detached
+	erl $(OPTS)  -name $(NODE) -s tcp_link_app start
 
 demon:
-	erl $(OPTS)  -name $(NODE) -s tcp_link_app start
+	erl $(OPTS)  -name $(NODE) -s tcp_link_app start -detached
 stop:
 	erl $(OPTS)  -name $(NODE) -s tcp_link_app  stop
 
