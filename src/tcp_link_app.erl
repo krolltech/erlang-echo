@@ -11,7 +11,7 @@
 
 -define(MAX_RESTART,5).
 -define(MAX_TIME,60).
--define(LISTEN_PORT,8081).
+-define(LISTEN_PORT,3031).
 
 start()->
     application:start(tcp_link).
