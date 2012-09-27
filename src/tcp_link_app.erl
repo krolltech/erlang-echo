@@ -21,6 +21,7 @@ start_server(Port) ->
 
 start(_Type, _StartArgs) ->
     error_logger:info_report("tcp application start."),
+    inets:start(),
     supervisor:start_link( {local,?MODULE},
 			   ?MODULE,
 			   [?LISTEN_PORT ,tcp_server]
